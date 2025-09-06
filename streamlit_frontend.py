@@ -86,7 +86,13 @@ if user_input:
         st.text(user_input)
 
     # **************** Streaming Setup ******************
-    CONFIG = {'configurable': {'thread_id': st.session_state['thread_id']}}
+    CONFIG = {
+        "configurable": {'thread_id': st.session_state['thread_id']},
+        "metadata": {
+            "thread_id": st.session_state['thread_id']
+        },
+        "run_name": 'chat turn'
+    }
 
     with st.chat_message('assistant'):
 
@@ -109,7 +115,7 @@ if user_input:
     st.session_state['message_history'].append({'role': 'assistant', 'content': ai_message})
 
     
-st.write(st.session_state)
+# st.write(st.session_state)
 
 
 

@@ -1,6 +1,6 @@
 # 🤖 GraphMind – “Connecting Knowledge Through Intelligence”
 
-📖 **Overview**  
+ # 📖 **Overview**  
 GraphMind is a **general-purpose AI assistant** built to explore and demonstrate the capabilities of **LangChain, LangGraph, LangSmith, RAG, and Agentic AI**.
 
 Unlike simple Q&A bots, GraphMind is designed as a **learning and experimentation platform** that integrates multiple advanced features:  
@@ -13,7 +13,7 @@ Unlike simple Q&A bots, GraphMind is designed as a **learning and experimentatio
 This project serves as both a **hands-on playground for developers** and a **scalable blueprint** for building production-ready, multi-modal conversational AI systems.
 
 
-🚀 **Problem Statement**  
+# 🚀 **Problem Statement**  
 Building a truly interactive and observable chatbot requires more than just an LLM. Challenges include:  
 - Maintaining **context across conversations**  
 - Managing **tools, agents, and workflows**  
@@ -24,7 +24,7 @@ Building a truly interactive and observable chatbot requires more than just an L
 **GraphMind** addresses these by combining **LangGraph’s stateful workflows**, **LangChain’s modular components**, and **LangSmith’s observability** into one cohesive assistant.
 
 
-🎯 **Purpose**  
+# 🎯 **Purpose**  
 The main purpose of GraphMind is to:  
 - Provide a **general-purpose chatbot** for diverse queries.  
 - Serve as a **learning project** for experimenting with LangChain, LangGraph, RAG, and agent-based AI.  
@@ -32,7 +32,7 @@ The main purpose of GraphMind is to:
 - Offer **traceability and observability** for developers to debug and optimize pipelines.
 
 
-⚙️ **Features**  
+# ⚙️ **Features**  
 - 💬 **Interactive Conversations** – Chat like ChatGPT with memory.  
 - 🛠️ **Tool Integration** – Extend chatbot with external APIs/utilities.  
 - 🔄 **Persistence** – Store chats, threads, and history in SQLite.  
@@ -42,7 +42,7 @@ The main purpose of GraphMind is to:
 - 🔗 **Graph Workflows** – Orchestrate reasoning via LangGraph.
 
 
-🛠️ **Tech Stack**  
+# 🛠️ **Tech Stack**  
 - **Backend & Orchestration**: LangChain, LangGraph  
 - **LLMs**: OpenAI / HuggingFace (pluggable) | meta-llama/Meta-Llama-3-8B-Instruct | mistralai/Mistral-7B-Instruct-v0.2
 - **RAG**: FAISS / ChromaDB (vector stores)  
@@ -52,7 +52,7 @@ The main purpose of GraphMind is to:
 - **Deployment**: Docker / Streamlit Cloud
 
 
-📊 **Workflow**  
+# 📊 **Workflow**  
 1. **User Input** – User asks a question or starts a conversation.  
 2. **Context Management** – Retrieve previous conversation history (SQLite).  
 3. **RAG Retrieval** – Relevant documents fetched from vector DB.  
@@ -62,7 +62,8 @@ The main purpose of GraphMind is to:
 7. **Observability** – Trace captured in LangSmith for monitoring/debugging.
 
 
-🖥️ **Example Usage**  
+# 🖥️ **Example Usage**  
+
 **Input:**  
 ```  
 "What are the key differences between LangChain and LangGraph?"  
@@ -76,7 +77,7 @@ LangGraph extends LangChain by introducing graph-based state machines, making it
 
 ---
 
-📦 **Installation**  
+# 📦 **Installation**  
 ```bash  
 # Clone repo  
 git clone https://github.com/Aadarsh4u-code/GraphMind-Chatbot  
@@ -93,14 +94,14 @@ pip install -r requirements.txt
 
 
 
-▶️ **Running the App**  
+# ▶️ **Running the App**  
 ```bash  
 streamlit run app.py  
 ```
 
 ---
 
-🧪 **Future Enhancements**  
+# 🧪 **Future Enhancements**  
 - 🌐 Multi-modal support (images, PDFs, and audio).  
 - 📈 Dashboard for metrics, latency, and analytics.  
 - 🔐 User authentication & role-based access.  
