@@ -34,7 +34,7 @@ The main purpose of GraphMind is to:
 
 # ⚙️ **Features**  
 - 💬 **Interactive Conversations** – Chat like ChatGPT with memory.  
-- 🛠️ **Tool Integration** – Extend chatbot with external APIs/utilities.  
+- 🛠️ **Tool Integration** – Extend chatbot with external APIs/utilities like Calculator (Mathrmatical Calculation), DuckDuckGo (Internet search), Stock Price API (Get stock price of any company).  
 - 🔄 **Persistence** – Store chats, threads, and history in SQLite.  
 - ⚡ **Streaming Responses** – Token-by-token outputs for a natural experience.  
 - 📊 **Observability & Metrics** – Integrated with LangSmith for tracing, latency, and evaluation.  

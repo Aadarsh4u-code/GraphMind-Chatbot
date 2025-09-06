@@ -1,6 +1,6 @@
 import streamlit as st
 from langgraph_backend import chatbot, retrieve_all_threads
-from langchain_core.messages import HumanMessage
+from langchain_core.messages import HumanMessage, AIMessage
 from utils import add_thread, generate_thread_id, load_conversation, reset_chat
 
 
@@ -58,7 +58,7 @@ for thread_id in st.session_state.get('chat_threads', [])[::-1]:
 
     # Sidebar button title
     if first_user_msg:
-        button_title = " ".join(first_user_msg.split()[:4])  # first 4 words
+        button_title = " ".join(first_user_msg.split()[:5])  # first 4 words
     else:
         button_title = "Current Chat"
 
@@ -101,15 +101,20 @@ if user_input:
         thinking_placeholder.markdown("🤔 Thinking...")
 
         # --- Now: Stream AI response ---
-        ai_message = st.write_stream(
-            message_chunk.content for message_chunk, metadata in chatbot.stream(
-                {'messages': [HumanMessage(content=user_input)]}, 
+        def ai_only_stream():
+            for message_chunk, metadata in chatbot.stream(
+                {"messages": [HumanMessage(content=user_input)]},
                 config=CONFIG,
-                stream_mode= 'messages'
-            )
-        )
-        # --- Remove "Thinking..." once output is ready ---
+                stream_mode="messages"
+            ):
+                if isinstance(message_chunk, AIMessage):
+                    # yield only assistant tokens
+                    yield message_chunk.content
+         
+         # --- Remove "Thinking..." once output is ready ---
         thinking_placeholder.empty()
+        ai_message = st.write_stream(ai_only_stream())
+       
 
     # Save AI response 
     st.session_state['message_history'].append({'role': 'assistant', 'content': ai_message})
